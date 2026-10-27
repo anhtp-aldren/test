@@ -1,3 +1,10 @@
 {
-  "fileId": "ix3v18yxtp-mvqennun-m2elq5ewck"
+  "fileId": "ix3v18yxtp-mvqennun-m2elq5ewck",
+  "noAlpha": false,
+  "mipmap": true,
+  "maxsize": 2048,
+  "borderLeft": 11,
+  "borderRight": 11,
+  "borderBottom": 11,
+  "borderTop": 11
 }

@@ -15,22 +15,22 @@
 </head>
 <body>
   <main class="preview">
-    <div class="popup-stage"><div class="game-ui gpopup" style="width:1000px;height:540px">
-    <div class="sk sk-bg01" style="inset:0"><div class="sk-tint" style="background-color:#C3AB83"></div></div>
-    <div class="abs" style="left:0;top:0;width:1000px;height:60px">
-      <div class="sk sk-title1" style="inset:0"></div>
-      <div class="gpopup-title-txt left" style="font-size:32px">Seed Shop</div>
-      <div class="sk sk-wb01" style="left:650px;top:7.5px;width:200px;height:45px;opacity:.6"><div class="sk-tint" style="background-color:#020202"></div></div>
-      <div class="t-label" style="left:650px;top:7.5px;width:200px;font-size:18px;line-height:45px;text-align:center;color:#fff;z-index:2">Refresh In: 00:00</div>
-      <div class="gpopup-close" style="left:943px;top:13px;width:34px;height:34px"></div>
+    <div class="popup-stage" cname="Seed Shop Popup"><div class="game-ui gpopup" cname="Game UI" style="width:1000px;height:540px">
+    <div class="sk sk-bg01" cname="Popup Background" style="inset:0"><div class="sk-tint" style="background-color:#C3AB83"></div></div>
+    <div class="abs" cname="Header" style="left:0;top:0;width:1000px;height:60px">
+      <div class="sk sk-title1" cname="Header Background" style="inset:0"></div>
+      <div class="gpopup-title-txt left" cname="Title" style="font-size:32px">Seed Shop</div>
+      <div class="sk sk-wb01" cname="Refresh Background" style="left:650px;top:7.5px;width:200px;height:45px;opacity:.6"><div class="sk-tint" style="background-color:#020202"></div></div>
+      <div class="t-label" cname="Refresh Timer" style="left:650px;top:7.5px;width:200px;font-size:18px;line-height:45px;text-align:center;color:#fff;z-index:2">Refresh In: 00:00</div>
+      <div class="gpopup-close" cname="Close Button" style="left:943px;top:13px;width:34px;height:34px"></div>
     </div>
-    <div class="abs" style="left:10px;top:70px;width:650px;height:460px">
-      <div class="sk sk-filter" style="inset:0"><div class="sk-tint" style="background-color:#E4CB9D"></div></div>
-      <div class="t-label" style="left:10px;top:15px;width:120px;font-size:22px;line-height:30px;text-align:center;color:#422F00">All seeds</div>
-      <div class="abs" style="left:20px;top:44px;width:610px;height:2px;background-color:#422F00;opacity:.5"></div>
-      <div class="abs" style="left:10px;top:50px;width:630px;height:400px;display:grid;grid-template-columns:repeat(5,110px);grid-auto-rows:140px;gap:10px;overflow:hidden">
+    <div class="abs" cname="Seed List Panel" style="left:10px;top:70px;width:650px;height:460px">
+      <div class="sk sk-filter" cname="Seed List Background" style="inset:0"><div class="sk-tint" style="background-color:#E4CB9D"></div></div>
+      <div class="t-label" cname="Category Label" style="left:10px;top:15px;width:120px;font-size:22px;line-height:30px;text-align:center;color:#422F00">All seeds</div>
+      <div class="abs" cname="Category Divider" style="left:20px;top:44px;width:610px;height:2px;background-color:#422F00;opacity:.5"></div>
+      <div class="abs" cname="Seed Grid" style="left:10px;top:50px;width:630px;height:400px;display:grid;grid-template-columns:repeat(5,110px);grid-auto-rows:140px;gap:10px;overflow:hidden">
         
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 1" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           <div class="sk sk-check" style="left:-2.5px;top:-2.5px;width:115px;height:145px;z-index:3"></div>
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -40,7 +40,7 @@
           <img src="../Assets/sprites/Main/Icon_Gold.png" class="abs" style="left:17px;top:117px;width:14px;height:14px;object-fit:contain;z-index:2">
           <div class="t-label" style="left:30px;top:110px;width:60px;font-size:14px;line-height:28px;text-align:center;color:#fff;font-weight:700;z-index:2">999,999K</div>
         </div>
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 2" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -50,7 +50,7 @@
           <img src="../Assets/sprites/Main/Icon_Gold.png" class="abs" style="left:17px;top:117px;width:14px;height:14px;object-fit:contain;z-index:2">
           <div class="t-label" style="left:30px;top:110px;width:60px;font-size:14px;line-height:28px;text-align:center;color:#fff;font-weight:700;z-index:2">999,999K</div>
         </div>
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 3" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -60,7 +60,7 @@
           <img src="../Assets/sprites/Main/Icon_Gold.png" class="abs" style="left:17px;top:117px;width:14px;height:14px;object-fit:contain;z-index:2">
           <div class="t-label" style="left:30px;top:110px;width:60px;font-size:14px;line-height:28px;text-align:center;color:#fff;font-weight:700;z-index:2">999,999K</div>
         </div>
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 4" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -70,7 +70,7 @@
           <img src="../Assets/sprites/Main/Icon_Gold.png" class="abs" style="left:17px;top:117px;width:14px;height:14px;object-fit:contain;z-index:2">
           <div class="t-label" style="left:30px;top:110px;width:60px;font-size:14px;line-height:28px;text-align:center;color:#fff;font-weight:700;z-index:2">999,999K</div>
         </div>
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 5" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -80,7 +80,7 @@
           <img src="../Assets/sprites/Main/Icon_Gold.png" class="abs" style="left:17px;top:117px;width:14px;height:14px;object-fit:contain;z-index:2">
           <div class="t-label" style="left:30px;top:110px;width:60px;font-size:14px;line-height:28px;text-align:center;color:#fff;font-weight:700;z-index:2">999,999K</div>
         </div>
-        <div style="position:relative;width:110px;height:140px">
+        <div cname="Seed Card 6" style="position:relative;width:110px;height:140px">
           <div class="sk sk-wb01" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
           
           <div class="t-label" style="left:3px;top:3px;width:104px;height:30px;padding:0 2px;font-size:11px;line-height:14px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">New Text</div>
@@ -92,18 +92,18 @@
         </div>
       </div>
     </div>
-    <div class="abs" style="left:670px;top:70px;width:320px;height:460px">
-      <div class="sk sk-filter" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
+    <div class="abs" cname="Details Panel" style="left:670px;top:70px;width:320px;height:460px">
+      <div class="sk sk-filter" cname="Details Background" style="inset:0"><div class="sk-tint" style="background-color:#F4E7CC"></div></div>
       
-      <div class="abs" style="left:10px;top:20px;width:90px;height:120px">
-        <div class="sk sk-wb01" style="inset:0"></div>
-        <img src="../Assets/sprites/Tutorial/Gold_Stock.png" class="abs" style="left:5px;top:20px;width:80px;height:80px;object-fit:contain">
+      <div class="abs" cname="Selected Seed Card" style="left:10px;top:20px;width:90px;height:120px">
+        <div class="sk sk-wb01" cname="Selected Seed Background" style="inset:0"></div>
+        <img src="../Assets/sprites/Tutorial/Gold_Stock.png" class="abs" cname="Selected Seed Icon" style="left:5px;top:20px;width:80px;height:80px;object-fit:contain">
       </div>
-      <div class="t-label" style="left:110px;top:25px;width:200px;padding:0 4px;font-size:20px;line-height:24px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">Placeholder</div>
-      <div class="abs" style="left:10px;top:155px;width:300px;height:150px;font-size:16px;line-height:22px;color:#422F00;z-index:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      <div class="t-label" style="left:50px;top:335px;width:220px;font-size:20px;line-height:40px;text-align:center;color:#422F00">Stock: 0</div>
-      <div class="gbtn-abs" style="left:30px;top:380px;width:260px;height:50px;flex-direction:column;justify-content:center;line-height:1.15;white-space:normal">
-        <span style="font-size:22px">Price</span><span style="font-size:15px">Buy</span>
+      <div class="t-label" cname="Selected Seed Name" style="left:110px;top:25px;width:200px;padding:0 4px;font-size:20px;line-height:24px;text-align:center;font-weight:800;white-space:normal;z-index:2;color:#126B37;text-shadow:1px 0 0 #7CCC66, -1px 0 0 #7CCC66, 0 1px 0 #7CCC66, 0 -1px 0 #7CCC66">Placeholder</div>
+      <div class="abs" cname="Selected Seed Description" style="left:10px;top:155px;width:300px;height:150px;font-size:16px;line-height:22px;color:#422F00;z-index:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      <div class="t-label" cname="Selected Seed Stock" style="left:50px;top:335px;width:220px;font-size:20px;line-height:40px;text-align:center;color:#422F00">Stock: 0</div>
+      <div class="gbtn-abs" cname="Buy Button" style="left:30px;top:380px;width:260px;height:50px;flex-direction:column;justify-content:center;line-height:1.15;white-space:normal">
+        <span cname="Buy Price Label" style="font-size:22px">Price</span><span cname="Buy Action Label" style="font-size:15px">Buy</span>
       </div>
     </div>
   </div>    </div>

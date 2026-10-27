@@ -31,6 +31,7 @@ from typing import Any
 
 PX = re.compile(r"^(-?[\d.]+)px$")
 HEX = re.compile(r"^#[0-9a-fA-F]{3,8}$")
+CSS_URL = re.compile(r"url\(\s*['\"]?([^'\")]+)")
 
 # Default skin mapping for UIDemo/popup_shop.html.  New HTML should use <img>
 # paths under Assets, which the compiler resolves through Craftland MCP.
@@ -38,6 +39,7 @@ DEFAULT_ASSET_MAP = {
     "sk-bg01": "0nhu6y637hkk-mvqenmx0-jq1kp1zecbg",
     "sk-title1": "ppzdinpw76h-mvqenmzi-rrj0yr829c",
     "sk-wb01": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+    "sk-wb04": "ix3v18yxtp-mvqennun-m2elq5ewck",
     "sk-filter": "t4uvrtptufb-mvqenn4v-hf96f2nhe0l",
     "sk-check": "u1r8ut8vd5-mvqens09-cwf58u6bv9v",
     "gpopup-close": "z632gv4bcs-mvqenjv0-o7na956k1tc",
@@ -58,6 +60,11 @@ def color(value: str | None, default: str = "#FFFFFF") -> str:
     if re.fullmatch(r"#[0-9a-fA-F]{3}", result):
         return "#" + "".join(component * 2 for component in result[1:])
     return result
+
+
+def css_url(value: str | None) -> str | None:
+    match = CSS_URL.search(value or "")
+    return match.group(1) if match else None
 
 
 def css(style: str | None) -> dict[str, str]:
@@ -211,13 +218,15 @@ def apply_plan(plan: dict[str, Any], client: McpClient, directory: str, name: st
         # screen rectangle while changing anchors and offsets the final result.
         props = {"transform.anchorMin": transform["anchorMin"], "transform.anchorMax": transform["anchorMax"],
                  "transform.pivot": transform["pivot"], "transform.sizeDelta": transform["sizeDelta"],
-                 "transform.anchoredPosition": transform["anchoredPosition"], "priority": entity["priority"]}
+                 "transform.anchoredPosition": transform["anchoredPosition"], "priority": entity["priority"],
+                 "name": entity["name"]}
         if "text" in entity:
             props.update({"text.value": entity["text"]["value"], "text.fontSize": entity["text"]["fontSize"],
                           "text.color": entity["text"]["color"], "text.alignment.h": entity["text"]["alignment"]})
         if "image" in entity:
             props["image.color"] = entity["image"]["color"]
             props["image.fillType"] = entity["image"]["fillType"]
+            props["alpha"] = round(entity["image"]["opacity"] * 100)
             source = entity["image"]["source"]
             if source:
                 # HTML paths are relative to the document; Craftland resolves project assets by ID.
@@ -300,6 +309,20 @@ class Compiler:
         result.update(node.style)
         return result
 
+    @staticmethod
+    def node_name(node: Node) -> str:
+        """Keep the editor tree recognisable from the HTML source."""
+        if node.attrs.get("cname"):
+            return node.attrs["cname"]
+        if node.attrs.get("id"):
+            return node.attrs["id"]
+        class_names = node.attrs.get("class", "").split()
+        if class_names:
+            return " ".join(class_names)
+        if node.attrs.get("src"):
+            return Path(node.attrs["src"]).stem
+        return node.tag
+
     def emit(self, node: Node, parent_id: str, parent_size: tuple[float, float], path: str,
              grid_offset: tuple[float, float] = (0.0, 0.0),
              flat_parent_id: str | None = None, absolute_offset: tuple[float, float] = (0.0, 0.0),
@@ -332,33 +355,45 @@ class Compiler:
             width = parent_size[0]
             height = px(style.get("font-size"), 16.0) * 1.15
             # The mockup uses a vertical, centred flex button label.
-            top = absolute_offset[1] + (3.0 if button_line == 0 else 27.0)
+            left = 0.0
+            top = 3.0 if button_line == 0 else 27.0
 
         entity_id = stable_id(path)
         classes = node.classes
         direct_text = text_content(node)
         source_path = node.attrs.get("src")
+        mask_source = css_url(style.get("-webkit-mask-image") or style.get("mask-image"))
         image_source = self.asset_map.get(source_path or "") or next(
-            (self.asset_map[class_name] for class_name in classes if class_name in self.asset_map), source_path
+            (self.asset_map[class_name] for class_name in classes if class_name in self.asset_map), source_path or mask_source
         )
         is_text = node.tag == "span" or bool(direct_text)
         is_image = (node.tag == "img" or "sk" in classes or "sk-tint" in classes
-                    or "gpopup-close" in classes or "gbtn-abs" in classes)
+                    or "gpopup-close" in classes or "gbtn-abs" in classes or "gmask" in classes)
         entity_type = "UITextEntity" if is_text else "UIImageEntity" if is_image else "UIEmptyEntity"
-        name = next(iter(classes), node.tag)
+        name = self.node_name(node)
         # CSS is top-left; Craftland's visual canvas resolves the equivalent
         # bottom-origin coordinate from the element's bottom edge.
-        coordinate_space = flat_canvas_size or parent_size
+        # Button spans are local to their button image; every other popup node
+        # uses the shared popup canvas coordinate space.
+        coordinate_space = parent_size if button_line is not None else (flat_canvas_size or parent_size)
         craftland_y = coordinate_space[1] - top - height
-        target_parent_id = flat_parent_id or parent_id
+        # Keep the DOM relationship in Craftland.  Wrapper groups occupy the
+        # popup canvas so their descendants may retain their HTML absolute
+        # coordinates without changing the validated visual layout.
+        target_parent_id = parent_id
+        output_position = {"x": left, "y": craftland_y}
+        output_size = {"x": width, "y": height}
+        if entity_type == "UIEmptyEntity" and flat_canvas_size is not None:
+            output_position = {"x": 0, "y": 0}
+            output_size = {"x": flat_canvas_size[0], "y": flat_canvas_size[1]}
         entity: dict[str, Any] = {
             "id": entity_id,
             "parentId": target_parent_id,
             "entityType": entity_type,
             "name": name,
             "transform": {
-                "anchoredPosition": {"x": left, "y": craftland_y},
-                "sizeDelta": {"x": width, "y": height},
+                "anchoredPosition": output_position,
+                "sizeDelta": output_size,
                 "anchorMin": {"x": 0, "y": 0},
                 "anchorMax": {"x": 0, "y": 0},
                 "pivot": {"x": 0, "y": 0},
@@ -389,8 +424,7 @@ class Compiler:
             }
         self.entities.append(entity)
 
-        # The popup is a single Craftland canvas.  HTML wrappers are useful for
-        # CSS but must not become nested coordinate spaces in the generated UI.
+        # Wrapper nodes retain the HTML tree while sharing the popup canvas.
         starts_flat_canvas = "popup-stage" in classes
         child_flat_parent = entity_id if starts_flat_canvas else flat_parent_id
         # The stage itself is positioned on the HUD; its descendants use local
@@ -400,6 +434,7 @@ class Compiler:
         positions = grid_positions(node, style)
         for index, child in enumerate(node.children):
             if "sk-tint" in child.classes:
+                # Tint is folded into its skin image so it remains one widget.
                 continue
             self.emit(child, entity_id, (width, height), f"{path}/{child.tag}[{index}]",
                       positions.get(index, (0.0, 0.0)), child_flat_parent, child_offset, child_canvas_size,

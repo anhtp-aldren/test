@@ -1,0 +1,24 @@
+{
+  "_entityName": "Collection模组",
+  "_tag": {
+    "type": "ff.collection"
+  },
+  "_entityId": "RjTFvj7s",
+  "children": [],
+  "prefabVariant": null,
+  "activeValue": {
+    "selfValue": true,
+    "valueTag": "activeValue"
+  },
+  "unlockedValue": {
+    "selfValue": true,
+    "valueTag": "unlockedValue"
+  },
+  "editorLockValue": false,
+  "editorVisibleValue": true,
+  "modId": 17,
+  "modOpen": true,
+  "enable3PSync": true,
+  "showSwitch": true
+}
+//"{FE:{"v":"1.19.4689915","c":{"FF":5001},"s":100}

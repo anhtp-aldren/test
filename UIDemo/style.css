@@ -1,0 +1,948 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --panel2: #1e2229;
+  --border: #2a2f3a;
+  --text: #e6e8ec;
+  --muted: #9aa2ad;
+  --accent: #6fcf97;
+  --accent2: #f2c94c;
+  --danger: #eb5757;
+  --link: #56ccf2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+header.topnav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+header.topnav .brand {
+  font-weight: 700;
+  margin-right: 16px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+header.topnav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+header.topnav a:hover { background: var(--panel2); color: var(--text); }
+header.topnav a.active { background: var(--accent); color: #08130d; font-weight: 600; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 20px 16px 60px; }
+
+h1 { font-size: 22px; margin: 4px 0 6px; }
+h2 { font-size: 18px; margin: 28px 0 10px; color: var(--accent2); }
+h3 { font-size: 15px; margin: 20px 0 8px; }
+p.lead { color: var(--muted); margin-top: 0; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 860px) {
+  .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+}
+
+.home-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+@media (max-width: 860px) { .home-tiles { grid-template-columns: 1fr; } }
+.tile {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .15s, transform .1s;
+}
+.tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+.tile .icon { font-size: 26px; }
+.tile h3 { margin: 10px 0 6px; color: var(--accent2); }
+.tile p { color: var(--muted); font-size: 13px; margin: 0; }
+
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.slider-row { margin-bottom: 14px; }
+.slider-row .val { color: var(--accent); font-weight: 600; }
+input[type=range] { width: 100%; }
+/* input:not([type=range]) bắt cả input tạo bằng JS không set .type (attribute "type" không tồn tại
+   nên input[type=text] không khớp — dù DOM property type mặc định là "text") — đây là nguyên nhân
+   nhiều ô input/textarea hiện chữ mờ/khó đọc trên nền tối. */
+input:not([type=range]):not([type=checkbox]):not([type=radio]), textarea, select {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+  width: 100%;
+}
+input:not([type=range]):not([type=checkbox]):not([type=radio])::placeholder, textarea::placeholder {
+  color: var(--muted);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table th, table td {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table th { color: var(--accent2); font-weight: 600; background: var(--panel2); }
+table tr:hover td { background: rgba(255,255,255,0.02); }
+table td input, table td textarea { background: transparent; border: 1px solid transparent; }
+table td input:focus, table td textarea:focus { background: var(--panel2); border-color: var(--accent); }
+
+button {
+  background: var(--accent);
+  color: #08130d;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+button.secondary { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+button:hover { opacity: .9; }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--panel2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+.badge.ok { color: var(--accent); border-color: var(--accent); }
+.badge.warn { color: var(--accent2); border-color: var(--accent2); }
+.badge.info { color: #56ccf2; border-color: #56ccf2; }
+.badge.rate { color: var(--danger); border-color: var(--danger); }
+.badge.slot { color: #bb8fce; border-color: #bb8fce; }
+.badge.wildcard { color: #f4d03f; border-color: #f4d03f; }
+
+.docs-layout { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .docs-layout { grid-template-columns: 1fr; } }
+.docs-nav { position: sticky; top: 70px; max-height: calc(100vh - 90px); overflow-y: auto; }
+.docs-nav a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.docs-nav a:hover { background: var(--panel2); color: var(--text); }
+.docs-nav a.active { background: var(--panel2); color: var(--accent); font-weight: 600; }
+.doc-content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 28px;
+  min-height: 400px;
+}
+.doc-content h1, .doc-content h2, .doc-content h3 { color: var(--text); }
+.doc-content h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.doc-content h2 { color: var(--accent2); }
+.doc-content a { color: var(--link); }
+.doc-content code { background: var(--panel2); padding: 2px 5px; border-radius: 4px; font-size: 0.9em; }
+.doc-content pre { background: #0b0d11; border: 1px solid var(--border); border-radius: 8px; padding: 12px; overflow-x: auto; }
+.doc-content pre code { background: none; padding: 0; }
+.doc-content table { margin: 14px 0; }
+.doc-content blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 12px 0;
+  padding: 4px 14px;
+  color: var(--muted);
+  background: var(--panel2);
+  border-radius: 0 6px 6px 0;
+}
+.doc-content details { background: var(--panel2); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
+
+.save-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: #08130d;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .2s, transform .2s;
+  pointer-events: none;
+}
+.save-toast.show { opacity: 1; transform: translateY(0); }
+
+.chart-wrap { background: var(--panel2); border-radius: 8px; padding: 10px; }
+
+/* Progression Pacing — highlight ô dồn cụm ngay trong bảng (thay cho chart, dễ đọc hơn theo phản hồi Tomo) */
+td.cell-cluster-mid { background: rgba(242,153,74,0.14); }
+td.cell-cluster-high { background: rgba(235,87,87,0.16); }
+
+/* Progression Pacing — chart full-width + popup mở to (Tomo 2026-09-28: 2 chart cạnh nhau khó nhìn) */
+.chart-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.chart-wrap.chart-tall { height: 380px; position: relative; }
+.chart-wrap.chart-tall canvas { width: 100% !important; height: 100% !important; }
+.chart-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.72); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.chart-modal-box { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; width: min(96vw, 1600px); height: min(90vh, 900px); display: flex; flex-direction: column; gap: 10px; }
+.chart-modal-canvas { flex: 1; min-height: 0; background: var(--panel2); border-radius: 8px; padding: 12px; position: relative; }
+.chart-modal-canvas canvas { width: 100% !important; height: 100% !important; }
+
+/* Plant Power Progression — chip chọn plant (multi-select) */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.plant-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--panel2); border: 1px solid var(--border); border-radius: 999px;
+  padding: 6px 12px; font-size: 13px; cursor: pointer; user-select: none;
+}
+.plant-chip:has(input:checked) { border-color: var(--accent); background: rgba(111,207,151,.12); }
+.plant-chip input[type=checkbox] { margin: 0; }
+.chip-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+/* Resource Distribution — ma trận tài nguyên × kênh */
+.matrix-legend { font-size: 12px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.lvl-dot {
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%;
+  margin: 0 3px 0 8px; vertical-align: middle; border: 1px solid var(--border);
+}
+.lvl-dot:first-child { margin-left: 0; }
+.lvl-dot.lvl-high { background: var(--accent); border-color: var(--accent); }
+.lvl-dot.lvl-medium { background: var(--accent2); border-color: var(--accent2); }
+.lvl-dot.lvl-low { background: #6b5230; border-color: #8a6a3d; }
+.lvl-dot.lvl-none { background: transparent; }
+/* "Cực hiếm" — tail-chance jackpot vượt ngoài nominal cap của pool. Nhỏ hơn + màu tím nổi bật
+   để phân biệt rõ với 3 mức thường, gợi cảm giác "hiếm, đáng để thử" chứ không phải lỗi hiển thị. */
+.lvl-dot.lvl-veryrare {
+  background: #c77dff;
+  border-color: #c77dff;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 4px #c77dff;
+}
+
+table.matrix-table { border-collapse: collapse; font-size: 13px; white-space: nowrap; }
+table.matrix-table th, table.matrix-table td {
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+table.matrix-table thead th {
+  background: var(--panel2);
+  color: var(--accent2);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 8px 4px;
+  cursor: default;
+  width: 78px;
+  max-width: 78px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.25;
+}
+table.matrix-table thead th .ch-icon { display: block; font-size: 18px; margin-bottom: 3px; }
+table.matrix-table thead th.corner { text-align: left; background: var(--panel); border: none; width: auto; max-width: none; }
+table.matrix-table tbody th {
+  text-align: left;
+  background: var(--panel2);
+  font-weight: 600;
+  white-space: normal;
+  min-width: 200px;
+  position: sticky;
+  left: 0;
+}
+table.matrix-table tbody th .res-icon { margin-right: 6px; }
+table.matrix-table tbody th input.res-name-input {
+  background: transparent; border: none; color: var(--text); font-weight: 600;
+  font-size: 13px; width: 85%;
+}
+table.matrix-table tbody th input.res-name-input:focus { background: var(--panel); border-radius: 4px; }
+table.matrix-table td.level-cell { cursor: pointer; user-select: none; width: 42px; }
+table.matrix-table td.level-cell .lvl-dot { margin: 0 auto; display: block; }
+table.matrix-table td.level-cell:hover { background: rgba(255,255,255,0.04); }
+table.matrix-table td.notes-toggle-cell { cursor: pointer; color: var(--muted); }
+table.matrix-table td.notes-toggle-cell:hover { color: var(--accent); }
+table.matrix-table td.del-cell { cursor: pointer; color: var(--danger); }
+tr.notes-row td { text-align: left; background: var(--panel); white-space: normal; }
+tr.notes-row textarea {
+  width: 100%; min-height: 54px; background: var(--panel2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px; padding: 8px; font-size: 13px; resize: vertical;
+}
+table.matrix-table th.channel-icon-only { font-size: 16px; }
+
+/* Level Overview — bảng dài, cho tự scroll dọc TRONG khung riêng (thay vì scroll cả trang) để
+   sticky header hoạt động chắc chắn, không phụ thuộc đo chiều cao topnav (dễ lệch/che nội dung). */
+.table-scroll {
+  overflow: auto;
+  max-height: 70vh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+#levelOverviewTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 1px 0 var(--border);
+}
+
+/* jspreadsheet (Config Tables) — thư viện mặc định theme sáng, ép màu rõ ràng
+   để không bị màu chữ tối của theme trang đè lên nền trắng gây khó đọc. */
+#configTable, #configTable .jexcel_container {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+#configTable table.jexcel { color: #1a1a1a; background: #ffffff; }
+#configTable table.jexcel td {
+  color: #1a1a1a;
+  background: #ffffff;
+  border-color: #d7d9dc;
+}
+#configTable table.jexcel > thead > tr > td,
+#configTable table.jexcel > tbody > tr > td:first-child {
+  color: #333333 !important;
+  background: #f0f1f3 !important;
+  font-weight: 600;
+}
+#configTable table.jexcel > tbody > tr > td:hover { background: #f7f8fa; }
+#configTable table.jexcel td.highlight-selected,
+#configTable table.jexcel td.highlight {
+  background: #dceeff !important;
+  color: #1a1a1a !important;
+}
+#configTable .jexcel_content { background: #ffffff; }
+#configTable input, #configTable textarea { color: #1a1a1a !important; }
+
+/* ==================== UI/UX Example page ==================== */
+.uiux-layout { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; margin-top: 16px; }
+@media (max-width: 900px) { .uiux-layout { grid-template-columns: 1fr; } }
+.uiux-nav { position: sticky; top: 70px; max-height: calc(100vh - 90px); overflow-y: auto; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+.uiux-nav .grp-label { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); padding: 10px 8px 4px; }
+.uiux-nav a { display: block; padding: 7px 10px; border-radius: 8px; color: var(--text); text-decoration: none; font-size: 13px; margin-bottom: 2px; }
+.uiux-nav a:hover { background: var(--panel2); }
+.uiux-nav a.active { background: var(--accent); color: #08130d; font-weight: 700; }
+
+.uiux-content { min-height: 400px; }
+/* Xếp DỌC (bản dựng trên, ảnh gốc dưới) thay vì 2 cột song song — để song song ảnh gốc bị scale nhỏ
+   lại theo bề rộng cột, khó soi chi tiết/màu sắc khi so sánh. Xếp dọc cho cả 2 hiện full bề rộng. */
+.uiux-pair { display: flex; flex-direction: column; gap: 18px; }
+.uiux-col h3 { margin: 0 0 10px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.uiux-stage-wrap { background: #20242c; border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: center; overflow: auto; }
+.uiux-stage-wrap img.ref-shot { max-width: none; width: auto; border-radius: 8px; display: block; box-shadow: 0 8px 20px rgba(0,0,0,.4); }
+.uiux-notes { margin-top: 18px; }
+.uiux-notes table { font-size: 12px; }
+.uiux-notes td, .uiux-notes th { padding: 6px 8px; }
+.uiux-notes .tag { display:inline-block; font-size:10px; padding:1px 6px; border-radius:999px; font-weight:700; }
+.uiux-notes .tag.real { background: rgba(111,207,151,.15); color: var(--accent); border:1px solid var(--accent); }
+.uiux-notes .tag.approx { background: rgba(242,201,76,.15); color: var(--accent2); border:1px solid var(--accent2); }
+.uiux-notes .tag.new { background: rgba(122,162,247,.15); color: #7aa2f7; border:1px solid #7aa2f7; }
+/* Bảng tra cứu asset cho dev (thay bảng "Asset dùng ở đâu" cũ) — xem trước ảnh/màu nhỏ gọn. */
+.uiux-notes .spec-thumb {
+  max-width: 40px; max-height: 40px; display: block; object-fit: contain; border-radius: 4px;
+  background: repeating-conic-gradient(#2a2f3a 0% 25%, #20242c 0% 50%) 50% / 10px 10px;
+}
+.uiux-notes .spec-thumb-placeholder { font-size: 11px; color: var(--muted); }
+.uiux-notes .spec-swatch {
+  display: inline-block; width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;
+  border: 1px solid rgba(255,255,255,.25); border-radius: 3px;
+}
+
+/* ---- Game UI reconstruction v3 (dùng asset thật + đúng 9-slice) ----
+   Nguyên tắc màu/scale (Tomo xác nhận, áp dụng nghiêm ngặt):
+   1) Engine KHÔNG hỗ trợ gradient nền — TUYỆT ĐỐI không dùng linear-gradient/radial-gradient ở đâu
+      trong file này. Chỉ dùng: màu phẳng (background-color / border-image không tint), opacity/alpha,
+      và scale.
+   2) "Mấy cái background nó có scale dạng 9-slice" — mọi khung/nút/thẻ bo góc dưới đây dùng CSS
+      border-image (border-image-slice cố định theo pixel gốc của sprite, corner giữ nguyên kích
+      thước, chỉ cạnh/tâm giãn) thay vì stretch nguyên khối (background-size:100% 100%) hoặc thay
+      bằng div màu phẳng thuần tuý — dùng ĐÚNG file sprite thật, không tự vẽ lại. QUAN TRỌNG: giá trị
+      slice/border ở đây lấy TRỰC TIẾP từ file `<tên sprite>.png.meta` đi kèm mỗi sprite trong
+      `PlantsvsZombies/Assets/Art/Sprites/` (field `borderLeft/Right/Top/Bottom`, đơn vị pixel gốc) —
+      đây là dữ liệu 9-slice THẬT do chính project khai báo, không phải đoán từ soi kênh alpha (cách
+      soi alpha trước đây SAI với nhiều sprite vì viền/khung là hoạ tiết vẽ trong ảnh chứ không phải
+      vùng trong suốt — alpha-scan không phát hiện được).
+   3) Màu ưu tiên lấy trực tiếp từ ẢNH MẪU gốc (design/ui-example/*.png, đo bằng PIL) — .ui source
+      (PlantsvsZombies/Assets/UI/*.ui) chỉ dùng để xác định ĐÚNG FILE SPRITE nào, KHÔNG dùng để suy
+      màu khi 2 nguồn mâu thuẫn (đã xảy ra ở tiêu đề Plant Detail — xem ghi chú bên dưới). Việc đổi
+      màu 1 sprite trung tính sang màu khác (VD nút "Merges" tím) dùng CSS filter (hue-rotate/
+      saturate/brightness) trên file gốc — đúng "hue màu bằng code", không tự chế asset mới. */
+.game-ui, .game-ui * { box-sizing: border-box; }
+.game-ui {
+  /* Đổi từ 'Baloo 2' sang 'Noto Sans' (v3.85, theo yêu cầu Tomo) — lý do: Baloo 2 chỉ có subset
+     latin/latin-ext/vietnamese/devanagari (thiếu Cyrillic, Hán, Thái, Ả Rập, Bengali...), không đủ
+     cho roadmap đa ngôn ngữ. Noto Sans (SIL OFL, free thương mại) là lựa chọn duy nhất kiểm chứng
+     được phủ đủ cả bộ ngôn ngữ mục tiêu (Anh, Hán phồn thể, Thái, Việt, Indonesia, Portuguese-BR,
+     Spanish, Nga, Pháp, Turkish, Hindi, Ả Rập, Bengali, Malay) khi ghép thêm các family con
+     Noto Sans TC/Thai/Devanagari/Arabic/Bengali — xem link Google Fonts trong <head> mỗi trang. */
+  font-family: 'Noto Sans', -apple-system, sans-serif;
+  color: #4a3c26;
+  position: relative;
+}
+.gstage { position: relative; background: #8fcf9a; border-radius: 10px; overflow: hidden; }
+
+/* Khung popup ngoài cùng — Img_Bg01.png (44x44). Meta thật: borderLeft/Right/Top/Bottom = 10 (đều
+   nhau) → slice/width 10px đều 4 cạnh. KHÔNG tint thêm (màu tan/be #C3AB83 đo trực tiếp từ ảnh mẫu
+   boss_selector_popup/backpack_ui_1/shop_ui_1/merge_plant chính là màu gốc của sprite này). */
+.gwindow {
+  position: relative;
+  border: 10px solid transparent;
+  border-image: url(../assets/sprites/Frames/Img_Bg01.png) 10 fill / 10px / 0 round;
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+  background-color: #C3AB83; /* fallback khi border-image chưa load, cùng màu sprite */
+  isolation: isolate; /* để filter ở .tint-dark::before không rò ra ngoài box này */
+}
+/* Upgrade Evolution: đo trực tiếp từ garden_upgrade.png ra nâu tối (#493204→#2E1601, không phải 1
+   màu phẳng tuyệt đối — có sắc độ nhẹ trên/dưới nhưng KHÔNG dựng bằng gradient; xấp xỉ bằng filter
+   tối màu trên chính sprite Img_Bg01.png = đổi màu cơ bản bằng code, không tự chế asset mới). Đặt
+   filter trên 1 lớp ::before riêng (không phải trên .gwindow trực tiếp) để KHÔNG làm tối luôn cả
+   header/nội dung con bên trong — header Upgrades đã dùng đúng sprite gỗ riêng (titleBg2), không
+   cần và không nên bị filter này ăn vào. */
+.gwindow.tint-dark { border-image-source: none; background: none; }
+.gwindow.tint-dark::before {
+  content: ''; position: absolute; inset: -10px; z-index: -1;
+  border: 10px solid transparent;
+  border-image: url(../assets/sprites/Frames/Img_Bg01.png) 10 fill / 10px / 0 round;
+  background-color: #C3AB83;
+  filter: brightness(.42) saturate(1.15);
+}
+.gwindow-header { position: relative; height: 56px; margin: -1px 0 0; }
+/* Img_Commer_TitleBg01.png (338x62) — meta thật: borderLeft=145 borderRight=178, top/bottom=0 (ảnh
+   dạng banner/ruy-băng, phần "mũ" 2 đầu chiếm gần hết bề rộng ảnh gốc, chỉ 1 dải rất mỏng ở giữa
+   thật sự giãn được) → PHẢI dùng slice/width KHÔNG đều 2 bên (top right bottom left), không thể
+   dùng số đơn giản như bản trước (20/12px sai hoàn toàn so với thật). */
+.gwindow-header .bg {
+  position: absolute; inset: 0 8px 0 8px;
+  border-style: solid; border-color: transparent;
+  border-width: 0 178px 0 145px;
+  border-image: url(../assets/sprites/Frames/Img_Commer_TitleBg01.png) fill 0 178 0 145 / 0 178px 0 145px / 0 stretch;
+}
+/* GHI CHÚ QUAN TRỌNG — mâu thuẫn dữ liệu chưa giải quyết được:
+   .ui thật (PlantDetailUI.ui, node PDTitle_BG) ghi color=#FF6200 (tint cam) trên chính sprite
+   Img_Commer_TitleBg01.png này. Nhưng đo trực tiếp pixel ảnh mẫu plant_full_detail.png (y=10-34,
+   quét ngang toàn bộ thanh tiêu đề) ra một dải nâu-ô-liu tối ổn định #413B05..#4C430D — HOÀN TOÀN
+   không phải cam. Vì Tomo yêu cầu ưu tiên "y chang ảnh mẫu", bản dựng dưới đây dùng màu nâu tối đo
+   được từ ảnh (cùng họ màu với thanh gỗ Upgrade Evolution) thay vì tint cam từ .ui — CẦN TOMO XÁC
+   NHẬN đâu là đúng (ảnh mẫu có thể chụp từ build khác/cũ hơn .ui hiện tại). */
+.gwindow-header .bg.tint-orange { filter: brightness(.4) saturate(.7) hue-rotate(25deg); }
+/* Img_Commer_titleBg02.png (326x61) — meta thật: borderLeft=30 borderRight=50, top/bottom=0. */
+.gwindow-header .bg.wood {
+  border-width: 0 50px 0 30px;
+  border-image: url(../assets/sprites/Frames/Img_Commer_titleBg02.png) fill 0 50 0 30 / 0 50px 0 30px / 0 stretch;
+}
+.gwindow-header .txt {
+  position: relative; z-index: 1; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 21px; letter-spacing: .3px;
+  text-shadow: 0 2px 2px rgba(0,0,0,.35);
+}
+.gclose-btn {
+  position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; z-index: 2;
+  background: url(../assets/sprites/Buttons/Button_Close.png) no-repeat center / contain;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+}
+.gbody { position: relative; padding: 14px; }
+/* Footer — đo trực tiếp plant_full_detail.png/backpack_ui_1.png ra đúng #615233, khớp gần với giá
+   trị tint .ui #635231 — 2 nguồn đồng thuận, giữ nguyên. */
+.gfoot { position: relative; padding: 10px 16px; background-color: #615233; font-size: 12px; font-weight: 700; color: #f3e9cf; }
+
+/* Ô item: Img_WindowBg03.png (9-slice, corner~0 vì sprite nhỏ 36x38 gần như phẳng) làm nền kem sáng
+   + lớp phủ rarity (Img_QualityBg.png tint theo tier, alpha 60%) chồng lên bằng ::before — đúng cấu
+   trúc 2 lớp thật trong InventoryUI.ui/RewardUI.ui. */
+.gitem-slot {
+  position: relative; width: 66px; height: 66px; border-radius: 10px;
+  background-color: #FFFBEF;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink:0;
+  overflow: hidden;
+}
+.gitem-slot::before {
+  content: ''; position: absolute; inset: 0; border-radius: 10px;
+  background-color: var(--rarity-color, transparent); opacity: .6;
+}
+.gitem-slot img.icon { position: relative; width: 76%; height: 76%; object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.3)); }
+/* Viền chọn: đo trực tiếp backpack_ui_1.png/backpack_ui_2.png/shop_ui_2.png — cả 3 ảnh đều cho viền
+   CAM (~#f2994a), không phải viền xanh lá như tài liệu .ui suy đoán trước đây — sửa lại theo ảnh mẫu. */
+.gitem-slot.selected { box-shadow: 0 0 0 3px #f2994a inset; }
+.gitem-slot .count { position: absolute; top: 3px; left: 5px; font-size: 11px; font-weight: 800; color: #3b2f1e; z-index: 1; }
+.gitem-slot .star { position: absolute; top: 3px; left: 5px; font-size: 12px; color: #f2994a; z-index: 1; }
+.gitem-slot .label { position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 600; color: #3b2f1e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Khoá item — Icons/Icon_Locked_Button.png (icon thật, InventoryUI.ui / Item_Lock), đúng theo ảnh
+   RAW TEMPLATE Tomo gửi (khoá cam góc trên-phải mỗi ô đã khoá) — bản trước THIẾU chi tiết này. */
+.gitem-slot .lock-badge {
+  position: absolute; top: 3px; right: 3px; z-index: 2;
+  width: 18px; height: 18px; border-radius: 50%; background-color: #e0973a;
+  display: flex; align-items: center; justify-content: center;
+}
+.gitem-slot .lock-badge img { width: 10px; height: 10px; object-fit: contain; filter: brightness(0) invert(1); }
+.gitem-grid { display: grid; grid-template-columns: repeat(5, 66px); gap: 20px 10px; padding-bottom: 6px; }
+
+/* Phân trang ô item — InventoryUI.ui / PageButtonNode (First/Prev/Next/Last dùng chung
+   Icons/Icon_Arrow.png xoay 4 hướng + nhãn "0/0") — bản trước KHÔNG có control này. */
+.gpagination { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
+.gpagination .arrow { width: 16px; height: 14px; opacity: .7; cursor: pointer; }
+.gpagination .arrow img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) saturate(100%) invert(30%) sepia(20%); }
+.gpagination .arrow.first { transform: rotate(90deg); }
+.gpagination .arrow.prev { transform: rotate(90deg) scaleY(-1); }
+.gpagination .arrow.next { transform: rotate(-90deg) scaleY(-1); }
+.gpagination .arrow.last { transform: rotate(-90deg); }
+.gpagination .label { font-size: 12px; font-weight: 700; color: #6b5a3a; }
+
+/* Xếp hạng sao — PlantDetailUI.ui / PDInfo_PlantTier (chuỗi ký tự sao, RAW TEMPLATE cho thấy rõ 5 sao
+   tổng: N sao đầu tô màu cam, còn lại viền đỏ nhạt) — bản trước chỉ vẽ 1 sao đơn, THIẾU 4 sao còn lại. */
+.gstars { display: inline-flex; gap: 4px; font-size: 30px; line-height: 1; }
+.gstars .on { color: #f2994a; }
+.gstars .off { color: #c0392b; opacity: .45; }
+
+/* Nút bấm — meta thật (borderLeft/Right/Top/Bottom trong .png.meta), KHÔNG dùng số đoán từ alpha nữa:
+   But_Small_01.png (122x50): L40 R40 T10 B10 (đối xứng, có cả viền trên/dưới).
+   But_Small_02/03/04.png (122x50): L40 R73 T0 B0 (lệch hẳn sang phải, không viền trên/dưới — 3 sprite
+   này cùng 1 bộ số, khác hẳn But_Small_01, có thể do khác hoạ tiết ở 2 đầu — dùng đúng số của từng
+   sprite, không gộp chung).
+   But_Big_01.png (158x50): L40 R110 T0 B0.
+   Màu sprite gốc dùng trực tiếp cho Select/Equip/Buy/Merge(trong màn Merge)=sage/teal, Lock=teal,
+   Uproot/huỷ=đỏ — khớp ảnh mẫu. Riêng nút "Merges" điều hướng ở Plant Detail footer đo ra màu TÍM
+   (~#4C3483) trên ảnh mẫu dù .ui ghi dùng chung sprite sage không tint — dùng filter hue-rotate trên
+   chính But_Small_01.png (đổi màu cơ bản bằng code) + flag CẦN TOMO XÁC NHẬN vì mâu thuẫn với .ui. */
+.gbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  border-style: solid; border-color: transparent; cursor: pointer; font-family: inherit; font-weight: 800; font-size: 14px;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  border-width: 10px 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_01.png) fill 10 40 / 10px 40px / 0 stretch;
+  width: 148px; height: 46px; padding: 0;
+}
+.gbtn.red {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_04.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+.gbtn.teal {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_02.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+.gbtn.blue {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_03.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+.gbtn.purple { filter: hue-rotate(100deg) saturate(1.3) brightness(.92); } /* xem ghi chú trên — cần Tomo xác nhận */
+/* .big dùng trong thẻ hẹp (150px) nên border-image-width thu nhỏ hơn slice gốc 1 chút (vẫn đúng tỉ
+   lệ hoạ tiết 2 đầu, chỉ scale nhỏ để không vỡ layout trong thẻ hẹp) — slice giữ nguyên số thật. */
+.gbtn.big {
+  width: 100%; height: 50px;
+  border-width: 0 55px 0 20px;
+  border-image: url(../assets/sprites/Buttons/But_Big_01.png) fill 0 110 0 40 / 0 55px 0 20px / 0 stretch;
+}
+
+.gsidebar { display: flex; flex-direction: column; gap: 4px; width: 82px; flex-shrink: 0; position: relative; }
+.gsidebar .gtab { position: relative; display:flex; flex-direction:column; align-items:center; gap:4px; padding:8px 4px; border-radius:10px; cursor:pointer; font-size:11px; font-weight:700; color:#5b4a30; }
+.gsidebar .gtab img.icon { position: relative; z-index: 1; width: 26px; height: 26px; object-fit: contain; }
+/* SỬA LẠI theo đúng InventoryUI.ui: "InventoryCategory_Selected" DÙNG THẬT sprite
+   Assets/CustomResources/UI/Guide/SquareGlow.png (bản v3 trước đó bỏ nhầm vì đo pixel ảnh màu không
+   thấy rõ khối nền — nhưng ảnh RAW TEMPLATE (chưa skin) Tomo gửi cho thấy rõ ràng có khối nền cam/
+   vàng phát sáng phía sau icon tab đang chọn, đúng khớp hình dạng SquareGlow.png). Đặt SquareGlow làm
+   lớp nền ::before phía sau icon, hơi lớn hơn icon 1 chút. */
+.gsidebar .gtab.active::before {
+  content: ''; position: absolute; top: 2px; left: 50%; transform: translateX(-50%);
+  width: 44px; height: 44px;
+  background: url(../assets/sprites/Tutorial/SquareGlow.png) no-repeat center / contain;
+}
+
+.gpill {
+  display: inline-flex; align-items: center; background-color: #E4CB9D;
+  padding: 6px 18px; font-size: 12px; font-weight: 800; color: #3b2f1e; border-radius: 10px;
+}
+
+/* Rarity: KHÔNG có sprite nền riêng theo tier (thư mục sell/ không được .ui nào dùng tới) — thật ra
+   dùng chung 1 sprite phẳng (Img_QualityBg.png) tint theo màu CHÍNH THỨC lấy từ code
+   (_RARITY_COLOR_MAP, Tomo cung cấp 2026-09-10 — xem design/19-ui-source-asset-mapping.md § Rarity
+   và RARITY_COLOR trong js/uiux.js). Text color của pill vẫn dùng cặp sáng/tối tự chọn để dễ đọc
+   (KHÔNG phải RARITY_TEXT_COLOR — map đó dùng cho chữ tên plant/tier trên nền rarity trong component
+   khác, xem mergePlantCard trong uiux.js). */
+.grarity { display: inline-block; padding: 2px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; color: #2b2013; }
+.grarity.common { background-color: #7CCC66; }
+.grarity.uncommon { background-color: #22B57E; color: #fff; }
+.grarity.rare { background-color: #669CCC; color: #fff; }
+.grarity.epic { background-color: #B073E5; color: #fff; }
+.grarity.legendary { background-color: #FBEA30; }
+.grarity.mythic { background-color: #E57373; color: #fff; }
+.grarity.special { background-color: #FFFFFF; border: 1px solid #ccc; }
+.grarity.locked { background-color: #CA3C3C; color: #fff; }
+
+.gempty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #b98a3a; font-weight: 800; height: 100%; }
+.gempty img { width: 64px; height: 64px; object-fit: contain; opacity: .85; }
+
+.gctrl-circle { position: absolute; border-radius: 50%; background-color: rgba(20,20,20,.42); border: 2px solid rgba(255,255,255,.55); display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:700; text-align:center; }
+
+/* Thẻ/section nhỏ bên trong popup — Img_WindowBg01.png (45x45, corner~10px) border-image 9-slice,
+   màu đo trực tiếp từ ảnh mẫu (kem sáng #F2E7CD/#F7E9C9 tuỳ ngữ cảnh — gần khớp giá trị .ui). */
+.gcard { border: 10px solid transparent; border-image: url(../assets/sprites/Frames/Img_WindowBg01.png) 10 fill / 10px / 0 round; background-color: #F7E9C9; padding: 10px; }
+.gcard.locked { filter: brightness(.9) saturate(.85); opacity: .9; }
+.gcost-pill { display: inline-flex; align-items: center; gap: 4px; background-color: rgba(0,0,0,.55); color: #fff; border-radius: 8px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
+
+/* Info-icon nhỏ trong stat row Plant Detail (ATK/Interval/DPS) — icon thật lib://fftextures đã được
+   Tomo copy vào design/ui-source/textures/WorkshopIconLibrary, khớp CHÍNH XÁC với node .ui
+   (Info_ATKIcon=T_34_M_WS_ICON_AIM, Info_ATKSPDIcon=FF_WS_timelimite, Info_DPSIcon=
+   T_34_M_WS_ICON_BLAST, Separator=T_34_M_WS_ICON_SQUARE) — không còn phải dùng chấm tròn placeholder. */
+.gstat-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.gstat-sep { width: 2px; height: 26px; object-fit: fill; opacity: .5; flex-shrink: 0; }
+
+/* ---- Boss HUD widget (Boss Progress Bar / Boss HP Bar) — dựng lại từ đúng transform data trong
+   BossUI.ui (ZombieProgressionNode) + Craftland Studio Hierarchy Tomo chụp, KHÔNG phải đoán toạ độ
+   từ ảnh chụp màn hình như bản trước.
+   PHÁT HIỆN QUAN TRỌNG (đã sửa lỗi hiểu sai trước đó): "ZombieProgression_BG" — thứ mình tưởng là
+   1 tấm nền trang trí kiểu mây/cảnh — THỰC RA là 1 thanh ĐEN BÁN TRONG SUỐT có viền vàng/gold 2 bên
+   (file Tutorial/UI_ingame_Profile_guide.png, chỉ 30x30px, viền vàng ~3px mỗi bên), tint trắng + alpha
+   60%. Vì đây là HUD hiển thị ĐÈ LÊN cảnh 3D đang chạy trong game (không phải popup có nền riêng),
+   nền "trời xanh" nhìn thấy trong ảnh mẫu chính là CẢNH 3D THẬT chiếu qua lớp đen bán trong suốt này
+   — không phải 1 tấm panel màu xanh dương như bản dựng trước đó lầm tưởng (đã dùng nhầm object-fit:
+   cover kéo dãn nguyên ảnh nhỏ ra toàn bộ khung hình, làm vỡ hình + sai hẳn bố cục). Nút "Select Tier"
+   là node RIÊNG (ZombieProgressionBtnNode, cùng cấp, không lồng trong khung nền) đặt chồng lên cùng
+   nền cảnh 3D đó, không có khung/nền hình vuông cam bao quanh — icon T_34_M_WS_ICON_LOOP.png tự nó
+   chỉ là icon mũi tên xoay màu trắng, tint cam khi hiển thị. */
+.ghud-scene { position: relative; background-color: #7aa9c4; overflow: visible; } /* #7aa9c4 = màu trời thay cho cảnh 3D thật, không phải sprite UI */
+/* Thanh nền bán trong suốt viền vàng — Tutorial/UI_ingame_Profile_guide.png (30x30), meta thật:
+   borderLeft=8 borderRight=8, top/bottom=0 (chỉ 9-slice ngang, không slice dọc vì ảnh không có chi
+   tiết theo chiều cao). alpha 60% áp cho CẢ khối (đúng theo .ui, không chỉ riêng viền vàng). */
+.ghud-bar {
+  position: relative;
+  border-style: solid; border-color: transparent; border-width: 0 8px;
+  border-image: url(../assets/sprites/Tutorial/UI_ingame_Profile_guide.png) fill 0 8 / 0 8px / 0 stretch;
+  opacity: .6;
+}
+.ghud-row { position: relative; display: flex; align-items: center; color: #fff; font-weight: 800; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+/* Progress_BG — Main/Img_commerBg.png (30x28), meta thật: borderLeft=8 borderRight=8 borderTop=7
+   borderBottom=8 (gần đều, lệch 1px không đáng kể). */
+.ghud-progress-track {
+  position: relative; flex: 1; height: 20px; overflow: hidden;
+  border-style: solid; border-color: transparent; border-width: 7px 8px 8px 8px;
+  border-image: url(../assets/sprites/Main/Img_commerBg.png) fill 7 8 8 8 / 7px 8px 8px 8px / 0 stretch;
+}
+.ghud-progress-fill { position: absolute; inset: 0; background-color: #69BC3F; transform-origin: left center; }
+.ghud-progress-label { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; height: 100%; color: #fff; font-size: 12px; font-weight: 800; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+/* Nút "Select Tier" — không có khung nền vuông thật trong .ui (chỉ icon LOOP tint cam) — giữ 1 nền
+   tròn cam nhỏ làm placeholder dễ nhìn (Craftland Studio có thể tự thêm khung mặc định cho Button mà
+   .ui không lưu lại — CẦN TOMO XÁC NHẬN có đúng vậy không), nhưng thu nhỏ + bo tròn thay vì vuông to
+   để đỡ tạo cảm giác "khối tách rời" như bản trước. */
+.ghud-tierbtn-icon { width: 40px; height: 40px; border-radius: 50%; background-color: #FF9C02; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,.35); }
+.ghud-tierbtn-icon img { width: 24px; height: 24px; object-fit: contain; filter: brightness(0) invert(1); }
+
+/* =====================================================================================
+   BỘ KHUNG CHUẨN v3.33 (theo yêu cầu Tomo: "làm 1 bộ khung trước... define ra bộ layout
+   basic chuẩn cho cả con game") — dựng theo ĐÚNG HỆ TOẠ ĐỘ .ui:
+   - Mỗi popup vẽ ở đúng kích thước native khai báo trong .ui (VD BossSelectorNode 600x400,
+     1 CSS px = 1 unit .ui), mọi thành phần đặt position:absolute theo toạ độ TÍNH TỪ
+     anchorMin/anchorMax + anchoredPosition + sizeDelta + pivot — không ước lượng bằng mắt.
+   - TINT sprite đúng công thức engine: engine nhân màu sprite với màu tint (multiply).
+     Sprite nền (Img_Bg01, Img_WindowBg01...) gần như TRẮNG, engine tint ra màu thật —
+     bản trước hiển thị sprite chưa tint nên khung bị NHẠT hơn ảnh mẫu. Ở đây mô phỏng
+     bằng lớp phủ .sk-tint dùng mix-blend-mode:multiply (đổi màu bằng code trên sprite
+     gốc, không tự chế asset, không gradient).
+   ===================================================================================== */
+.gpopup { position: relative; margin: 0 auto; isolation: isolate; /* chặn mix-blend-mode của .sk-tint rò ra ngoài popup */ }
+.gpopup .abs { position: absolute; }
+/* Skin 9-slice chuẩn: border-image theo số .meta thật; muốn tint thì thêm <div class="sk-tint"> con */
+.sk { position: absolute; border-style: solid; border-color: transparent; pointer-events: none; }
+.sk > .sk-tint {
+  position: absolute; mix-blend-mode: multiply;
+  top: calc(0px - var(--bt, 0px)); right: calc(0px - var(--br, 0px));
+  bottom: calc(0px - var(--bb, 0px)); left: calc(0px - var(--bl, 0px));
+  border-radius: var(--rad, 10px);
+}
+/* Img_Bg01.png (44x44) — meta: 10/10/10/10. Khung popup ngoài cùng. */
+.sk-bg01 { --bt: 10px; --br: 10px; --bb: 10px; --bl: 10px; --rad: 14px;
+  border-width: 10px;
+  border-image: url(../assets/sprites/Frames/Img_Bg01.png) 10 fill / 10px / 0 stretch; }
+/* Img_WindowBg01.png (45x45, TRẮNG tinh) — meta: 10/10/10/10. Nền section/hàng item. */
+.sk-wb01 { --bt: 10px; --br: 10px; --bb: 10px; --bl: 10px; --rad: 10px;
+  border-width: 10px;
+  border-image: url(../assets/sprites/Frames/Img_WindowBg01.png) 10 fill / 10px / 0 stretch; }
+/* Img_Commer_TitleBg01.png (338x62) — meta: L145 R178 T0 B0. Thanh tiêu đề FULL-WIDTH
+   popup (đúng .ui: BossSelectorTitleNode anchorMin=(0,1) anchorMax=(1,1) size=(0,50) —
+   tràn hết bề ngang, KHÔNG inset như bản .gwindow-header cũ). Không tint (#ffffff). */
+.sk-title1 {
+  border-width: 0 178px 0 145px;
+  border-image: url(../assets/sprites/Frames/Img_Commer_TitleBg01.png) fill 0 178 0 145 / 0 178px 0 145px / 0 stretch;
+}
+/* Chữ tiêu đề — .ui: fontSize=36, trắng, căn giữa, box cao 40 (50-10). Web font khác
+   engine font nên giữ 34px cho khớp bề rộng chữ trong ảnh mẫu. */
+.gpopup-title-txt {
+  position: absolute; inset: 5px 0; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 34px; font-weight: 700; letter-spacing: .5px;
+  text-shadow: 0 2px 2px rgba(0,0,0,.35); z-index: 2;
+}
+/* Nút đóng — .ui: BSTitle_Close 45x45, tâm tại x=+260 tính từ giữa title (600 wide → left=537.5). */
+.gpopup-close {
+  position: absolute; width: 45px; height: 45px; z-index: 3; cursor: pointer;
+  background: url(../assets/sprites/Buttons/Button_Close.png) no-repeat center / 78%;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.4));
+}
+/* Label chuẩn trong hàng/list — .ui: fontSize=24 (bold=false), màu #382200 (nâu đậm, KHÔNG đen). */
+.gpopup .t-label { position: absolute; color: #382200; font-size: 22px; font-weight: 600; line-height: 25px; white-space: nowrap; overflow: hidden; z-index: 2; }
+/* Nút chuẩn absolute (But_Small_01 sage, meta L40 R40 T10 B10) — box-sizing border-box để
+   width/height đặt inline = đúng size .ui (VD Item_SelectBtn 120x45). */
+.gbtn-abs {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  border-style: solid; border-color: transparent; border-width: 10px 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_01.png) fill 10 40 / 10px 40px / 0 stretch;
+  color: #fff; font-size: 22px; font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,.35);
+  cursor: pointer; z-index: 2; white-space: nowrap;
+}
+/* Ô thưởng chuẩn 45x45 (RewardNode trong BossUI.ui): 2 lớp nền alpha 60% chồng nhau
+   (SquareGrey.png + Img_ItemBg2.png) + icon co vào 8px mỗi cạnh (size -16,-16). */
+.greward-frame { position: absolute; width: 45px; height: 45px; z-index: 2; }
+.greward-frame > img.bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .6; }
+.greward-frame > img.ic { position: absolute; inset: 8px; width: 29px; height: 29px; object-fit: contain; }
+
+/* ==== Bộ khung chuẩn v3.34 — dạng INVENTORY (InventoryUI.ui) ==== */
+/* Img_Filterbg.png (67x44) — meta: L28 R28 T20 B20. Nền vùng lưới/panel info/hotbar. */
+.sk-filter { --bt: 20px; --br: 28px; --bb: 20px; --bl: 28px; --rad: 12px;
+  border-width: 20px 28px;
+  border-image: url(../assets/sprites/Frames/Img_Filterbg.png) 20 28 fill / 20px 28px / 0 stretch; }
+/* Img_FilterbgSelected.png (70x44) — meta: L28 R28 T20 B20. Nút tròn Backpack cạnh hotbar. */
+.sk-filtersel { --bt: 20px; --br: 28px; --bb: 20px; --bl: 28px; --rad: 16px;
+  border-width: 20px 28px;
+  border-image: url(../assets/sprites/Frames/Img_FilterbgSelected.png) 20 28 fill / 20px 28px / 0 stretch; }
+/* Img_WindowBg03.png — meta: 14/14/14/14. Nền ô item. */
+.sk-wb03 { --bt: 14px; --br: 14px; --bb: 14px; --bl: 14px; --rad: 12px;
+  border-width: 14px;
+  border-image: url(../assets/sprites/Frames/Img_WindowBg03.png) 14 fill / 14px / 0 stretch; }
+/* Tint sprite TRẮNG bằng mask: sprite làm mask alpha, background-color = màu tint —
+   đúng 100% công thức tint glyph trắng của engine (icon tab, khoá, mũi tên, heart, glow...). */
+.gmask {
+  position: absolute; pointer-events: none;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+}
+/* Nút absolute biến thể teal (But_Small_02, meta L40 R73 T0 B0) cho nút Lock trong info panel. */
+.gbtn-abs.teal {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_02.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+/* Img_CheckBox.png (50x50) — meta: 15/15/15/15. Khung viền cam bo tròn = highlight ô ĐANG CHỌN
+   thật (InventoryUI.ui / InventoryGrid_Selected, 90x115 đè lên ô 92x108) — file có thật trong
+   Art/Sprites/Main (trước tưởng thiếu vì tìm theo đường dẫn CustomResources). KHÔNG dùng fill —
+   sprite chỉ là khung viền rỗng ruột. */
+.sk-check {
+  border-width: 15px;
+  border-image: url(../assets/sprites/Main/Img_CheckBox.png) 15 / 15px / 0 stretch;
+}
+
+/* ==== Bộ khung chuẩn v3.38 — dạng REWARD (RewardUI.ui) ==== */
+/* Img_BannerBg02.png (10x76) — meta: T32 B38, KHÔNG có L/R (chỉ 9-slice dọc, ảnh gốc rất mảnh nên
+   kéo ngang toàn bộ = nền thân popup, có gradient sẵn trong ảnh — không phải CSS gradient tự thêm). */
+.sk-bannerbg02 {
+  border-width: 32px 0 38px 0;
+  border-image: url(../assets/sprites/Notify/Img_BannerBg02.png) fill 32 0 38 0 / 32px 0 38px 0 / 0 stretch;
+}
+/* Img_BannerBg01.png (446x32) — meta: L235 R190 (dải sóng trang trí viền TRÊN, bị ribbon che gần
+   hết theo đúng thứ tự layer .ui — vẫn dựng đúng cấu trúc, không tự ý bỏ). */
+.sk-bannerbg01 {
+  border-width: 0 190px 0 235px;
+  border-image: url(../assets/sprites/Notify/Img_BannerBg01.png) fill 0 190 0 235 / 0 190px 0 235px / 0 stretch;
+}
+/* Img_BannerBg03.png (362x26) — meta: L220 R0 (dải sóng trang trí viền DƯỚI, xanh đậm). */
+.sk-bannerbg03 {
+  border-width: 0 0 0 220px;
+  border-image: url(../assets/sprites/Notify/Img_BannerBg03.png) fill 0 0 0 220 / 0 0 0 220px / 0 stretch;
+}
+
+/* ==== Bộ khung chuẩn v3.39 — dạng SHOP (SeedShopUI2.ui) ====
+   Toạ độ toàn bộ lấy TRỰC TIẾP từ dump .ui/ShopNode (1000x540) bằng công thức chuẩn
+   css_center = avgAnchor×parentSize ± pos — không suy đoán từ ảnh mẫu như bản trước. */
+/* Tiêu đề Shop căn TRÁI (khác các popup khác căn giữa) — ShopTitle_Text align=left/middle. */
+.gpopup-title-txt.left { justify-content: flex-start; padding-left: 40px; }
+/* Img_commerBg_ProgressBar.png (18x18) — meta: 7/7/7/7. Dải ruy-băng rarity trong thẻ item Shop
+   (Item_RarityBanner / ShopInfo_RarityBanner) — sprite nhỏ nên border-image-width thu theo tỉ lệ. */
+.sk-progressbar {
+  border-width: 7px;
+  border-image: url(../assets/sprites/Main/Img_commerBg_ProgressBar.png) 7 fill / 7px / 0 stretch;
+}
+
+/* ==== Bộ khung chuẩn v3.40 — dạng PLANT DETAIL (PlantDetailUI.ui) ====
+   PHÁT HIỆN QUAN TRỌNG: node ảnh (`propsData.image`) trong .ui có thêm 2 trường `gradientTop`/
+   `gradientBottom` (fade dọc THẬT do chính engine hỗ trợ, multiply lên trên `color`) — không phải
+   "không có gradient" như quy tắc chung trước đây (quy tắc đó vẫn đúng cho MỌI sprite khác trong dự
+   án, chỉ riêng `PD_BG` — khung ngoài Plant Detail — có khai báo gradient trắng(trên)→nâu #493D24
+   (dưới) thật trong .ui). `.sk-tint` hỗ trợ thêm gradient qua `sk()` khi truyền tint dạng chuỗi
+   "grad:top,bottom". */
+/* Img_QualityBg04.png (34x20) — meta: L15 R16 T4 B12. Nền tab Overview/Skills. */
+.sk-qualitybg04 { --bt: 4px; --br: 16px; --bb: 12px; --bl: 15px; --rad: 10px;
+  border-width: 4px 16px 12px 15px;
+  border-image: url(../assets/sprites/Frames/Img_QualityBg04.png) 4 16 12 15 fill / 4px 16px 12px 15px / 0 stretch; }
+/* But_Small_01.png dùng riêng cho nút Merge — CẦN TINT (xem ghi chú dưới), khác các .gbtn-abs
+   khác luôn giữ màu gốc sprite (không tint) nên không cần bản sk riêng. */
+.sk-btn1 { --bt: 10px; --br: 40px; --bb: 10px; --bl: 40px; --rad: 16px;
+  border-width: 10px 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_01.png) 10 40 fill / 10px 40px / 0 stretch; }
+/* Biến thể đỏ/xanh dương absolute cho Uproot (But_Small_04) / Break Level (But_Small_03) — cùng
+   border 0/73/0/40 như .gbtn-abs.teal, chỉ khác file sprite. Giữ MÀU GỐC sprite (không tint) vì
+   .ui ghi normal=#FFFFFF cho cả 2 nút này (đã kiểm chứng — khác với nút Merge). */
+.gbtn-abs.red {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_04.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+.gbtn-abs.blue {
+  border-width: 0 73px 0 40px;
+  border-image: url(../assets/sprites/Buttons/But_Small_03.png) fill 0 73 0 40 / 0 73px 0 40px / 0 stretch;
+}
+
+/* ==== Bộ khung chuẩn v3.41 — BOSS WIDGETS / UPGRADE / MERGE (BossUI.ui, UpgradesUI.ui, MergeUI.ui) ====
+   Áp dụng lại đúng phương pháp (toạ độ .ui thật qua script tự động, tint multiply đúng công thức,
+   gradient CHỈ khi .ui khai báo thật) cho các widget còn lại theo yêu cầu Tomo "sửa luôn UI còn lại".
+   PHÁT HIỆN: gradient thật KHÔNG chỉ có ở PlantDetailUI.ui — UpgradesUI.ui có ÍT NHẤT 4 node
+   (Upgrades_BG, UpgradeGrid_BG, UpgradeGrid_BG2, Item_BG) với gradientTop≠gradientBottom thật —
+   sửa lại phát biểu "chỉ 1 ngoại lệ" ở bản Plant Detail (xem CHANGELOG [3.41]). */
+/* Main/Img_commerBg.png (30x28) — meta: L8 R8 T7 B8. Nền thanh HP/progress boss. */
+.sk-commerbg { --bt: 7px; --br: 8px; --bb: 8px; --bl: 8px; --rad: 10px;
+  border-width: 7px 8px 8px 8px;
+  border-image: url(../assets/sprites/Main/Img_commerBg.png) 7 8 8 8 fill / 7px 8px 8px 8px / 0 stretch; }
+/* Tutorial/SquareGrey.png (64x64, GÓC BO TRÒN) — KHÔNG có .meta project khai báo sẵn (asset này
+   vốn chỉ dùng full-bleed dưới icon reward, không phải track progress) — v3.50d: đo trực tiếp
+   bằng cách quét alpha kênh ảnh (Python/PIL): alpha bắt đầu >0 từ px 9, đạt full 255 quanh px 14
+   ở góc trên-trái (đối xứng 4 góc) → dùng border-image-SLICE=14 (đơn vị pixel ảnh gốc, giữ trọn
+   vùng bo góc) nhưng render ở border-WIDTH=8px (thu nhỏ tỉ lệ khi vẽ, vì khung dùng cho thanh cao
+   chỉ 27-35px — nếu render đúng 14px sẽ chiếm gần hết chiều cao, méo tỉ lệ) — đây là 9-SLICE THẬT
+   (border-image), khác hẳn cách cũ dùng mask()+background-size 100% 100% (không 9-slice, kéo dãn
+   nguyên khối làm góc bo tròn bị bóp méo thành elip dẹt — đúng lỗi Tomo chỉ ra). Số 14 đo trực tiếp
+   từ ảnh thật, không phải đoán mù; số 8px (border-width hiển thị) là lựa chọn thẩm mỹ để khớp độ
+   dày các thanh khác trong bộ (sk-commerbg cũng ~7-8px) — CHƯA có xác nhận .meta chính thức từ dev. */
+.sk-squaregrey { --bt: 8px; --br: 8px; --bb: 8px; --bl: 8px; --rad: 8px;
+  border-width: 8px;
+  border-image: url(../assets/sprites/Tutorial/SquareGrey.png) 14 fill / 8px / 0 stretch; }
+/* Img_Commer_titleBg02.png (326x61) — meta: L30 R50. Tiêu đề gỗ Upgrade Evolution. */
+.sk-titlebg2 {
+  border-width: 0 50px 0 30px;
+  border-image: url(../assets/sprites/Frames/Img_Commer_titleBg02.png) fill 0 50 0 30 / 0 50px 0 30px / 0 stretch;
+}
+/* Nút đóng riêng của Upgrades (Upgrades_Close dùng Img_WindowBg01 tròn đỏ #DE5757 + icon Close) —
+   .ui không sliced border cho nút tròn nhỏ này, xấp xỉ bo tròn bằng border-radius CSS. */
+.sk-closecircle { --bt:0;--br:0;--bb:0;--bl:0; --rad: 50%;
+  border-radius: 50%; overflow: hidden;
+  border-width: 10px; border-image: url(../assets/sprites/Frames/Img_WindowBg01.png) 10 fill / 10px / 0 round; }
+
+tr.rest-row td { color: #5c6470; background: rgba(255,255,255,0.015); }
+
+/* ===================================================================================
+   D70 — DESIGN SYSTEM (2026-10-05): chữ gọn, khoảng cách đều, menu nhóm có icon,
+   chế độ Gọn/Đầy đủ. Ghi đè các quy tắc cũ phía trên; KHÔNG đụng .game-ui / .gpopup.
+   =================================================================================== */
+:root {
+  --bg: #0e1014; --panel: #161920; --panel2: #1d2129; --panel3: #242a34; --border: #272d38;
+  --text: #e8eaee; --muted: #8f98a5; --accent: #6fcf97; --accent2: #f2c94c; --link: #6cc3f5;
+  --radius: 12px; --shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+body { font-family: "Inter", "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); }
+code { background: var(--panel3); padding: 1px 6px; border-radius: 5px; font-size: 12px; }
+
+/* --- Header / nav --- */
+header.topnav { gap: 6px; padding: 8px 20px; background: rgba(22,25,32,.92); backdrop-filter: blur(8px); box-shadow: 0 1px 0 var(--border); border-bottom: 0; flex-wrap: nowrap; min-height: 56px; }
+header.topnav .brand { font-size: 16px; font-weight: 800; letter-spacing: .2px; color: var(--accent); margin-right: 4px; padding: 6px 4px; background: none; text-decoration: none; }
+header.topnav .brand:hover { background: none; }
+header.topnav #versionBadge { margin-right: 14px; }
+.nav-groups { display: flex; gap: 2px; flex: 1; }
+.nav-group { position: relative; }
+.nav-btn { background: transparent; color: var(--muted); border: 0; border-radius: 8px; padding: 9px 12px; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.nav-btn:hover, .nav-group.open .nav-btn { background: var(--panel2); color: var(--text); opacity: 1; }
+.nav-group.active .nav-btn { color: var(--accent); background: rgba(111,207,151,.10); }
+.nav-btn .caret { font-size: 10px; opacity: .6; margin-left: 2px; }
+.nav-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 300px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 6px; z-index: 50; }
+.nav-group.open .nav-menu { display: block; }
+@media (hover: hover) { .nav-group:hover .nav-menu { display: block; } .nav-group:hover .nav-menu::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px; } }
+header.topnav .nav-menu a { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border-radius: 8px; color: var(--text); font-size: 13px; }
+header.topnav .nav-menu a:hover { background: var(--panel2); }
+header.topnav .nav-menu a.active { background: rgba(111,207,151,.12); color: var(--text); font-weight: 400; }
+header.topnav .nav-menu a.active b { color: var(--accent); }
+.nav-menu .ni { font-size: 18px; width: 24px; text-align: center; line-height: 1.3; }
+.nav-menu b { display: block; font-weight: 650; }
+.nav-menu small { display: block; color: var(--muted); font-size: 11.5px; line-height: 1.35; margin-top: 1px; }
+.mode-toggle { margin-left: auto; background: var(--panel2); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.mode-toggle:hover { border-color: var(--accent); opacity: 1; }
+
+/* --- Sync banner --- */
+.sync-banner { background: rgba(235,87,87,.10); border: 1px solid rgba(235,87,87,.55); color: #ffc2c2; padding: 8px 14px; margin: 10px auto 0; max-width: 1240px; border-radius: 10px; font-size: 12.5px; }
+.sync-banner .sb-btn { margin-left: 8px; background: #eb5757; color: #fff; border: 0; border-radius: 6px; padding: 3px 10px; font-size: 12px; }
+.sync-banner .sb-link { color: #ffc2c2; margin-left: 8px; }
+.sync-banner .sb-log { color: #ddd; font-family: ui-monospace, monospace; font-size: 11.5px; margin-top: 4px; }
+
+/* --- Page --- */
+main { max-width: 1240px; padding: 22px 20px 64px; }
+h1.page-title { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 750; margin: 6px 0 2px; letter-spacing: -.2px; }
+h1.page-title .pt-icon { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; font-size: 20px; }
+p.page-sub { color: var(--muted); margin: 0 0 14px 48px; font-size: 13.5px; }
+h2 { font-size: 16.5px; font-weight: 700; color: var(--text); margin: 26px 0 10px; display: flex; align-items: center; gap: 8px; }
+h2::before { content: ""; width: 4px; height: 16px; border-radius: 2px; background: var(--accent); display: inline-block; }
+.card h2:first-child, .card > h2 { margin-top: 0; }
+h3 { font-size: 14px; font-weight: 700; color: var(--accent2); }
+p.lead { color: var(--muted); font-size: 13px; }
+.card { border-radius: var(--radius); padding: 16px 18px; margin-bottom: 14px; background: var(--panel); border-color: var(--border); }
+
+/* --- Chi tiết (Gọn/Đầy đủ) --- */
+details.more { margin: 0 0 14px; border: 1px dashed var(--border); border-radius: 10px; padding: 6px 12px; background: rgba(255,255,255,.015); }
+details.more > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; font-weight: 600; list-style: none; user-select: none; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "ⓘ  "; }
+details.more[open] > summary { margin-bottom: 6px; }
+details.more p.lead { margin: 0; }
+.cx .cx-rest { display: none; } .cx.cx-open .cx-rest { display: inline; }
+.cx-tg { color: var(--link); font-size: 12px; text-decoration: none; white-space: nowrap; }
+
+/* --- Bảng --- */
+table { font-size: 12.5px; }
+table th { background: var(--panel2); color: var(--muted); font-weight: 650; font-size: 11.5px; text-transform: none; letter-spacing: .2px; }
+table th, table td { padding: 7px 10px; border-bottom-color: var(--border); }
+table tr:hover td { background: rgba(255,255,255,.025); }
+
+/* --- Nút / input --- */
+button { border-radius: 8px; }
+button.secondary { background: var(--panel2); }
+
+/* --- Trang chủ --- */
+.home-groups { display: grid; gap: 22px; margin-top: 18px; }
+.home-group h2 { margin: 0 0 10px; }
+.home-tiles { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)) !important; gap: 12px; margin-top: 0; }
+.tile { padding: 14px 16px; border-radius: var(--radius); display: flex; gap: 12px; align-items: flex-start; }
+.tile .icon { font-size: 22px; width: 40px; height: 40px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--panel2); border-radius: 10px; }
+.tile h3 { margin: 0 0 3px; color: var(--text); font-size: 14px; }
+.tile p { font-size: 12.5px; line-height: 1.4; }
+
+/* --- Docs --- */
+.docs-group-title { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin: 12px 8px 4px; font-weight: 700; }
+.docs-group-title:first-child { margin-top: 2px; }
+.doc-content blockquote { border-left: 3px solid var(--accent); background: var(--panel2); margin: 10px 0; padding: 6px 14px; border-radius: 0 8px 8px 0; color: var(--muted); }
+body.compact .doc-content blockquote.long { display: none; }
+.docs-nav a.docs-home { color: var(--accent); font-weight: 700; border-bottom: 1px solid var(--border); border-radius: 6px 6px 0 0; margin-bottom: 4px; }
+@media (max-width: 1100px) { header.topnav { flex-wrap: wrap; } .nav-groups { order: 3; flex-basis: 100%; overflow-x: auto; } .nav-btn { padding: 7px 10px; } }
+
+header.topnav a.export-cfg { margin-left: auto; background: var(--accent); color: #08130d; font-weight: 700; font-size: 12.5px; padding: 6px 12px; border-radius: 8px; white-space: nowrap; }
+header.topnav a.export-cfg:hover { filter: brightness(1.1); background: var(--accent); color: #08130d; }
+header.topnav .mode-toggle { margin-left: 8px; }

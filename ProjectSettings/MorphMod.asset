@@ -1,0 +1,16 @@
+{
+  "_entityName": "Morph模组",
+  "_tag": {
+    "type": "ff.morph"
+  },
+  "_entityId": "SA78x3eN",
+  "children": [],
+  "prefabVariant": null,
+  "activeValue": null,
+  "unlockedValue": null,
+  "editorLockValue": false,
+  "editorVisibleValue": true,
+  "modId": 27,
+  "modOpen": true
+}
+//"{FE:{"v":"1.19.4654128","c":{"FF":5001},"s":100}

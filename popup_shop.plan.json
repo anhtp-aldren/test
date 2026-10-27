@@ -1,0 +1,2842 @@
+{
+  "format": "craftland-ui-entity-plan/v1",
+  "entities": [
+    {
+      "id": "1550d1b26204",
+      "parentId": null,
+      "entityType": "UIRootEntity",
+      "name": "Root",
+      "transform": {
+        "anchoredPosition": {
+          "x": 750.0,
+          "y": 375.0
+        },
+        "sizeDelta": {
+          "x": 1500,
+          "y": 750
+        }
+      }
+    },
+    {
+      "id": "d1e5b7b502fe",
+      "parentId": "1550d1b26204",
+      "entityType": "UIEmptyEntity",
+      "name": "popup-stage",
+      "transform": {
+        "anchoredPosition": {
+          "x": 250.0,
+          "y": 105.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 540.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 1
+    },
+    {
+      "id": "fab085df59ce",
+      "parentId": "d1e5b7b502fe",
+      "entityType": "UIEmptyEntity",
+      "name": "gpopup",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 540.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2
+    },
+    {
+      "id": "1e900ce1ba3e",
+      "parentId": "fab085df59ce",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 540.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 3,
+      "image": {
+        "source": "0nhu6y637hkk-mvqenmx0-jq1kp1zecbg",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "e49091fe7d63",
+      "parentId": "1e900ce1ba3e",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 540.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 4,
+      "image": {
+        "source": null,
+        "color": "#C3AB83",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "9ef1f5a54189",
+      "parentId": "fab085df59ce",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 480.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 5
+    },
+    {
+      "id": "2d529b729827",
+      "parentId": "9ef1f5a54189",
+      "entityType": "UIImageEntity",
+      "name": "sk-title1",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 6,
+      "image": {
+        "source": "ppzdinpw76h-mvqenmzi-rrj0yr829c",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "89c9d4cf66e2",
+      "parentId": "9ef1f5a54189",
+      "entityType": "UITextEntity",
+      "name": "left",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 28.0
+        },
+        "sizeDelta": {
+          "x": 1000.0,
+          "y": 32.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 7,
+      "text": {
+        "value": "Seed Shop",
+        "fontSize": 32.0,
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "lineHeight": 0
+      }
+    },
+    {
+      "id": "6e74655b51dd",
+      "parentId": "9ef1f5a54189",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 650.0,
+          "y": 7.5
+        },
+        "sizeDelta": {
+          "x": 200.0,
+          "y": 45.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 8,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 0.6
+      }
+    },
+    {
+      "id": "b0b7cb998bd1",
+      "parentId": "6e74655b51dd",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 200.0,
+          "y": 45.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 9,
+      "image": {
+        "source": null,
+        "color": "#020202",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "cfecd89fca79",
+      "parentId": "9ef1f5a54189",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 650.0,
+          "y": 7.5
+        },
+        "sizeDelta": {
+          "x": 200.0,
+          "y": 45.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "Refresh In: 00:00",
+        "fontSize": 18.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 45.0
+      }
+    },
+    {
+      "id": "0953a5b09829",
+      "parentId": "9ef1f5a54189",
+      "entityType": "UIImageEntity",
+      "name": "gpopup-close",
+      "transform": {
+        "anchoredPosition": {
+          "x": 943.0,
+          "y": 13.0
+        },
+        "sizeDelta": {
+          "x": 34.0,
+          "y": 34.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 11,
+      "image": {
+        "source": "z632gv4bcs-mvqenjv0-o7na956k1tc",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "c263b45d8e86",
+      "parentId": "fab085df59ce",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 10.0
+        },
+        "sizeDelta": {
+          "x": 650.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 12
+    },
+    {
+      "id": "1fa193a2cd7e",
+      "parentId": "c263b45d8e86",
+      "entityType": "UIImageEntity",
+      "name": "sk-filter",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 650.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 13,
+      "image": {
+        "source": "t4uvrtptufb-mvqenn4v-hf96f2nhe0l",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "48586f47082e",
+      "parentId": "1fa193a2cd7e",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 650.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 14,
+      "image": {
+        "source": null,
+        "color": "#E4CB9D",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "8fced2e4badd",
+      "parentId": "c263b45d8e86",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 415.0
+        },
+        "sizeDelta": {
+          "x": 120.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 15,
+      "text": {
+        "value": "All seeds",
+        "fontSize": 22.0,
+        "color": "#422F00",
+        "alignment": "center",
+        "lineHeight": 30.0
+      }
+    },
+    {
+      "id": "8093c4083488",
+      "parentId": "c263b45d8e86",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 20.0,
+          "y": 414.0
+        },
+        "sizeDelta": {
+          "x": 610.0,
+          "y": 2.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 16
+    },
+    {
+      "id": "bb2b3ca3c984",
+      "parentId": "c263b45d8e86",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 10.0
+        },
+        "sizeDelta": {
+          "x": 630.0,
+          "y": 400.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 17
+    },
+    {
+      "id": "4db4de795f71",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 260.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 18
+    },
+    {
+      "id": "631c95cc9e19",
+      "parentId": "4db4de795f71",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 19,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "05edd0bad7fc",
+      "parentId": "631c95cc9e19",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 20,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "cd8d53294d3a",
+      "parentId": "4db4de795f71",
+      "entityType": "UIImageEntity",
+      "name": "sk-check",
+      "transform": {
+        "anchoredPosition": {
+          "x": -2.5,
+          "y": -2.5
+        },
+        "sizeDelta": {
+          "x": 115.0,
+          "y": 145.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 3,
+      "image": {
+        "source": "u1r8ut8vd5-mvqens09-cwf58u6bv9v",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "90121f45a56f",
+      "parentId": "4db4de795f71",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "54053c5e4b55",
+      "parentId": "4db4de795f71",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 23,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "3d548101a16a",
+      "parentId": "4db4de795f71",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 24,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b3c967217368",
+      "parentId": "3d548101a16a",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 25,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "1033eabf1223",
+      "parentId": "4db4de795f71",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "4f8ca5dc7a7f",
+      "parentId": "4db4de795f71",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "52fd7665a531",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 120.0,
+          "y": 260.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 28
+    },
+    {
+      "id": "b3bb1e32e305",
+      "parentId": "52fd7665a531",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 29,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b51d140df33f",
+      "parentId": "b3bb1e32e305",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 30,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b94f1fe0f591",
+      "parentId": "52fd7665a531",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "18d35b5468b8",
+      "parentId": "52fd7665a531",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 32,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "6d719a9abd29",
+      "parentId": "52fd7665a531",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 33,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "7d44f70c6802",
+      "parentId": "6d719a9abd29",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 34,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b91a2acf1bef",
+      "parentId": "52fd7665a531",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "5834a0cac2a4",
+      "parentId": "52fd7665a531",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "9703ff996f03",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 240.0,
+          "y": 260.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 37
+    },
+    {
+      "id": "eedc7e0c3da5",
+      "parentId": "9703ff996f03",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 38,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "9acbd540da88",
+      "parentId": "eedc7e0c3da5",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 39,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "9e0b92c07117",
+      "parentId": "9703ff996f03",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "a3d278ff5c73",
+      "parentId": "9703ff996f03",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 41,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "fcb52b7fd924",
+      "parentId": "9703ff996f03",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 42,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "0abf1ffbf221",
+      "parentId": "fcb52b7fd924",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 43,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "f0d9ef3853e0",
+      "parentId": "9703ff996f03",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "7987c3442215",
+      "parentId": "9703ff996f03",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "24d3be80fad1",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 360.0,
+          "y": 260.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 46
+    },
+    {
+      "id": "aec628d593ae",
+      "parentId": "24d3be80fad1",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 47,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "7d229ed675e5",
+      "parentId": "aec628d593ae",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 48,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "d502dd65b512",
+      "parentId": "24d3be80fad1",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "aa3c909c4401",
+      "parentId": "24d3be80fad1",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 50,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "d42c0943517c",
+      "parentId": "24d3be80fad1",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 51,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "cadfb94228f0",
+      "parentId": "d42c0943517c",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 52,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "0f343425d886",
+      "parentId": "24d3be80fad1",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "15d58bcff257",
+      "parentId": "24d3be80fad1",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "1d240e00ecc8",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 480.0,
+          "y": 260.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 55
+    },
+    {
+      "id": "1c9758b266a2",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 56,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "385c55ea3485",
+      "parentId": "1c9758b266a2",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 57,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b92fb8add0f3",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "94b2732ed819",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 59,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "87a33fa6b806",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 60,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "43381e35f2ab",
+      "parentId": "87a33fa6b806",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 61,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "f51397da506c",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "b04aa88e1651",
+      "parentId": "1d240e00ecc8",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "3f9d331339e5",
+      "parentId": "bb2b3ca3c984",
+      "entityType": "UIEmptyEntity",
+      "name": "div",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 110.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 64
+    },
+    {
+      "id": "8d27bc1d962d",
+      "parentId": "3f9d331339e5",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 65,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "3552a0fbc526",
+      "parentId": "8d27bc1d962d",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 110.0,
+          "y": 140.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 66,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "8e2c8ecce17c",
+      "parentId": "3f9d331339e5",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 3.0,
+          "y": 107.0
+        },
+        "sizeDelta": {
+          "x": 104.0,
+          "y": 30.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "New Text",
+        "fontSize": 11.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 14.0
+      }
+    },
+    {
+      "id": "3e513678dce3",
+      "parentId": "3f9d331339e5",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 25.0,
+          "y": 44.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 60.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 68,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "64f5897d30da",
+      "parentId": "3f9d331339e5",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 69,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "39244255ea7d",
+      "parentId": "64f5897d30da",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 70,
+      "image": {
+        "source": null,
+        "color": "#21CF78",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "7e616d766262",
+      "parentId": "3f9d331339e5",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 17.0,
+          "y": 9.0
+        },
+        "sizeDelta": {
+          "x": 14.0,
+          "y": 14.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "image": {
+        "source": "../Assets/sprites/Main/Icon_Gold.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "70d5f7234dcd",
+      "parentId": "3f9d331339e5",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 2.0
+        },
+        "sizeDelta": {
+          "x": 60.0,
+          "y": 28.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "999,999K",
+        "fontSize": 14.0,
+        "color": "#fff",
+        "alignment": "center",
+        "lineHeight": 28.0
+      }
+    },
+    {
+      "id": "19885c7bf883",
+      "parentId": "fab085df59ce",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 670.0,
+          "y": 10.0
+        },
+        "sizeDelta": {
+          "x": 320.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 73
+    },
+    {
+      "id": "ce3586423577",
+      "parentId": "19885c7bf883",
+      "entityType": "UIImageEntity",
+      "name": "sk-filter",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 320.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 74,
+      "image": {
+        "source": "t4uvrtptufb-mvqenn4v-hf96f2nhe0l",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "5caee9577bc4",
+      "parentId": "ce3586423577",
+      "entityType": "UIImageEntity",
+      "name": "sk-tint",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 320.0,
+          "y": 460.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 75,
+      "image": {
+        "source": null,
+        "color": "#F4E7CC",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "e2e7b9bd2e1d",
+      "parentId": "19885c7bf883",
+      "entityType": "UIEmptyEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 320.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 120.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 76
+    },
+    {
+      "id": "af4439511d76",
+      "parentId": "e2e7b9bd2e1d",
+      "entityType": "UIImageEntity",
+      "name": "sk",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "sizeDelta": {
+          "x": 90.0,
+          "y": 120.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 77,
+      "image": {
+        "source": "axvhm5gjpfa-mvqennn9-b7gzdkp4egn",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "8310efb0c748",
+      "parentId": "e2e7b9bd2e1d",
+      "entityType": "UIImageEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 5.0,
+          "y": 20.0
+        },
+        "sizeDelta": {
+          "x": 80.0,
+          "y": 80.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 78,
+      "image": {
+        "source": "../Assets/sprites/Tutorial/Gold_Stock.png",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    {
+      "id": "20361e39982a",
+      "parentId": "19885c7bf883",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 110.0,
+          "y": 411.0
+        },
+        "sizeDelta": {
+          "x": 200.0,
+          "y": 24.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "Placeholder",
+        "fontSize": 20.0,
+        "color": "#126B37",
+        "alignment": "center",
+        "lineHeight": 24.0
+      }
+    },
+    {
+      "id": "c050808a55fc",
+      "parentId": "19885c7bf883",
+      "entityType": "UITextEntity",
+      "name": "abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 10.0,
+          "y": 155.0
+        },
+        "sizeDelta": {
+          "x": 300.0,
+          "y": 150.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 2,
+      "text": {
+        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "fontSize": 16.0,
+        "color": "#422F00",
+        "alignment": "left",
+        "lineHeight": 22.0
+      }
+    },
+    {
+      "id": "b4e57571492f",
+      "parentId": "19885c7bf883",
+      "entityType": "UITextEntity",
+      "name": "t-label",
+      "transform": {
+        "anchoredPosition": {
+          "x": 50.0,
+          "y": 85.0
+        },
+        "sizeDelta": {
+          "x": 220.0,
+          "y": 40.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 81,
+      "text": {
+        "value": "Stock: 0",
+        "fontSize": 20.0,
+        "color": "#422F00",
+        "alignment": "center",
+        "lineHeight": 40.0
+      }
+    },
+    {
+      "id": "4793d33c68e8",
+      "parentId": "19885c7bf883",
+      "entityType": "UIEmptyEntity",
+      "name": "gbtn-abs",
+      "transform": {
+        "anchoredPosition": {
+          "x": 30.0,
+          "y": 30.0
+        },
+        "sizeDelta": {
+          "x": 260.0,
+          "y": 50.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 82
+    },
+    {
+      "id": "d0ed2464117a",
+      "parentId": "4793d33c68e8",
+      "entityType": "UITextEntity",
+      "name": "span",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 28.0
+        },
+        "sizeDelta": {
+          "x": 260.0,
+          "y": 22.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 83,
+      "text": {
+        "value": "Price",
+        "fontSize": 22.0,
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "lineHeight": 0
+      }
+    },
+    {
+      "id": "6494ee9642c2",
+      "parentId": "4793d33c68e8",
+      "entityType": "UITextEntity",
+      "name": "span",
+      "transform": {
+        "anchoredPosition": {
+          "x": 0.0,
+          "y": 35.0
+        },
+        "sizeDelta": {
+          "x": 260.0,
+          "y": 15.0
+        },
+        "anchorMin": {
+          "x": 0,
+          "y": 0
+        },
+        "anchorMax": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "priority": 84,
+      "text": {
+        "value": "Buy",
+        "fontSize": 15.0,
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "lineHeight": 0
+      }
+    }
+  ]
+}

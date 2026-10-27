@@ -1,0 +1,16 @@
+{
+  "_entityName": "Dyeing模组",
+  "_tag": {
+    "type": "ff.dyeing"
+  },
+  "_entityId": "BBwdBQ6j",
+  "children": [],
+  "prefabVariant": null,
+  "activeValue": null,
+  "unlockedValue": null,
+  "editorLockValue": false,
+  "editorVisibleValue": true,
+  "modId": 32,
+  "modOpen": true
+}
+//"{FE:{"v":"1.19.4654128","c":{"FF":5001},"s":100}

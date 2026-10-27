@@ -1,0 +1,23 @@
+{
+  "_entityName": "",
+  "_tag": {
+    "type": "FileStateRecord"
+  },
+  "_entityId": "FspsgzwK",
+  "fileState": {
+    "hffztsqqso7-lw7lmhnn-2mwx0ree7c5": {
+      "viewState": {
+        "x": 50.877010345458984,
+        "y": 57.00514602661133,
+        "z": 70.67789459228516
+      },
+      "rotationState": {
+        "x": 34.60000228881836,
+        "y": 222.99998474121094,
+        "z": 0.000001037220158650598
+      }
+    }
+  },
+  "children": []
+}
+//"{FE:{"v":"1.19.4689915","c":{"FF":5001},"s":100}

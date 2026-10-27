@@ -1,0 +1,47 @@
+[
+  {
+    "id": 8,
+    "name": "Camera"
+  },
+  {
+    "id": 11,
+    "name": "Player"
+  },
+  {
+    "id": 18,
+    "name": "Workflow"
+  },
+  {
+    "id": 29,
+    "name": "Hostility"
+  },
+  {
+    "id": 33,
+    "name": "Physics"
+  },
+  {
+    "id": 39,
+    "name": "Global"
+  },
+  {
+    "id": 40,
+    "name": "InputSystem"
+  },
+  {
+    "id": 42,
+    "name": "Mechanism"
+  },
+  {
+    "id": 34,
+    "name": "MiniMap"
+  },
+  {
+    "id": 50,
+    "name": "RoomSocial"
+  },
+  {
+    "id": 17,
+    "name": "Collection"
+  }
+]
+//"{FE:{"v":"1.19.4689915","c":{"FF":5001},"s":100}

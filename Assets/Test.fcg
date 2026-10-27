@@ -1,0 +1,27 @@
+import "StdLibrary.fcc" as StdLib
+import "EditorGenLib.fcc" as EditorLib
+import "Player.fcc" as Player
+import "Collection.fcc" as Collection
+import "List.fcc" as List
+
+graph Test {
+    //Executed when entity is created
+    event OnAwake() {
+
+    }
+
+    event OnPlayerJoin(player entity<Player>) {
+        var prisonerOutfit List<OutfitID> = {
+            // EResCloth.PrisonerHead,
+            // EResCloth.PrisonerTop,
+            // EResCloth.PrisonerPants,
+            // EResCloth.PrisonerShoes,
+
+            EResCloth.JailbirdHead,
+            EResCloth.JailbirdTop,
+            EResCloth.JailbirdPants,
+            EResCloth.JailbirdShoes,
+        }
+        SetBundle(player, prisonerOutfit)
+    }
+}

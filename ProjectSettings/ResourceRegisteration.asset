@@ -1,0 +1,228 @@
+{
+  "_tag": {
+    "type": "ResourceRegisteration"
+  },
+  "_entityId": "JsXbGuFg",
+  "Resource": {
+    "ui": {
+      "id": "ui",
+      "children": [
+        {
+          "refer": {
+            "fileId": "3b5r80aejav-mvao3seq-ngn1xm7xnt",
+            "filePath": "Assets\\UI\\TestUI.ui",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "ui"
+          },
+          "scriptName": "TestUI",
+          "children": []
+        }
+      ]
+    },
+    "scene": {
+      "id": "scene",
+      "children": []
+    },
+    "prefab": {
+      "id": "prefab",
+      "children": []
+    },
+    "ugcscript": {
+      "id": "ugcscript",
+      "children": []
+    },
+    "eca": {
+      "id": "eca",
+      "children": []
+    },
+    "texture": {
+      "id": "texture",
+      "children": []
+    },
+    "effecttype": {
+      "id": "effecttype",
+      "children": []
+    },
+    "sound": {
+      "id": "sound",
+      "children": []
+    },
+    "fitem": {
+      "id": "fitem",
+      "children": []
+    },
+    "fScenePrefab": {
+      "id": "fScenePrefab",
+      "children": []
+    },
+    "clothskin": {
+      "id": "clothskin",
+      "children": [
+        {
+          "refer": {
+            "fileId": "Cloth_211000052",
+            "filePath": "lib://ffSkin/ffCloth/211000052",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "PrisonerHead",
+          "children": []
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_203000248",
+            "filePath": "lib://ffSkin/ffCloth/203000248",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "PrisonerTop",
+          "children": []
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_204000142",
+            "filePath": "lib://ffSkin/ffCloth/204000142",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "PrisonerPants",
+          "children": []
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_205000118",
+            "filePath": "lib://ffSkin/ffCloth/205000118",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "PrisonerShoes",
+          "children": []
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_203000247",
+            "filePath": "lib://ffSkin/ffCloth/203000247",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "JailbirdTop",
+          "children": [],
+          "_isNewInSession": true
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_211000051",
+            "filePath": "lib://ffSkin/ffCloth/211000051",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "JailbirdHead",
+          "children": [],
+          "_isNewInSession": true
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_204000141",
+            "filePath": "lib://ffSkin/ffCloth/204000141",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "JailbirdPants",
+          "children": [],
+          "_isNewInSession": true
+        },
+        {
+          "refer": {
+            "fileId": "Cloth_205000117",
+            "filePath": "lib://ffSkin/ffCloth/205000117",
+            "_tag": {
+              "type": "GFileRefer"
+            },
+            "fileType": "clothskin"
+          },
+          "scriptName": "JailbirdShoes",
+          "children": [],
+          "_isNewInSession": true
+        }
+      ]
+    },
+    "weaponskin": {
+      "id": "weaponskin",
+      "children": []
+    },
+    "vehicleskin": {
+      "id": "vehicleskin",
+      "children": []
+    },
+    "emoteskin": {
+      "id": "emoteskin",
+      "children": []
+    },
+    "csv": {
+      "id": "csv",
+      "children": []
+    },
+    "internalhudtype": {
+      "id": "internalhudtype",
+      "children": []
+    },
+    "textureResource": {
+      "id": "textureResource",
+      "children": []
+    },
+    "mesh": {
+      "id": "mesh",
+      "children": []
+    },
+    "material": {
+      "id": "material",
+      "children": []
+    },
+    "ac": {
+      "id": "ac",
+      "children": []
+    },
+    "particles": {
+      "id": "particles",
+      "children": []
+    },
+    "playerdata": {
+      "id": "playerdata",
+      "children": []
+    },
+    "pd": {
+      "id": "pd",
+      "children": []
+    },
+    "xbt": {
+      "id": "xbt",
+      "children": []
+    },
+    "pfm": {
+      "id": "pfm",
+      "children": []
+    },
+    "skilltype": {
+      "id": "skilltype",
+      "children": []
+    }
+  },
+  "children": []
+}
+//"{FE:{"v":"1.19.4689915","c":{"FF":5001},"s":100}

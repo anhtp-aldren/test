@@ -5,6 +5,8 @@ import "Collection.fcc" as Collection
 import "List.fcc" as List
 
 graph Test {
+    workSink int
+
     //Executed when entity is created
     event OnAwake() {
 
@@ -23,5 +25,17 @@ graph Test {
             EResCloth.JailbirdShoes,
         }
         SetBundle(player, prisonerOutfit)
+    }
+
+    event OnUpdate() {
+        DoSomething()
+    }
+
+    func DoSomething() {
+        var value int = workSink
+        for i = 0, 250000, 1 {
+            value = (value * 33 + i) % 1000003
+        }
+        workSink = value
     }
 }
